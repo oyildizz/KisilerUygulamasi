@@ -2,6 +2,7 @@ package com.example.kisileruygulamasi.data.repo
 
 import android.util.Log
 import com.example.kisileruygulamasi.data.datasource.KisilerDataSource
+import com.example.kisileruygulamasi.data.entitiy.Kisiler
 
 class KisilerRepository {
     var kds = KisilerDataSource()
@@ -11,4 +12,6 @@ class KisilerRepository {
         kds.guncelle(kisi_id, kisi_ad, kisi_tel)
 
     suspend fun sil(kisi_id: Int) = kds.sil(kisi_id)
+
+    suspend fun kisileriYukle(): List<Kisiler> = kds.kisileriYukle()
 }

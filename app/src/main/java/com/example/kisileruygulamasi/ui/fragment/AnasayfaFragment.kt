@@ -32,18 +32,10 @@ class AnasayfaFragment : Fragment() {
 //        binding.rv.layoutManager = StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL)
 //        binding.rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)//instagram hikayeler ksımı
 
-
-        val kisilerListesi = ArrayList<Kisiler>()
-        val k1 = Kisiler(1, "Baran", "777")
-        val k2 = Kisiler(2, "Özge", "444")
-        val k3 = Kisiler(3, "Ozan", "888")
-        kisilerListesi.add(k1)
-        kisilerListesi.add(k2)
-        kisilerListesi.add(k3)
-
-        val kisilerAdapter = KisilerAdapter(requireContext(), kisilerListesi,viewModel)
-        binding.rv.adapter = kisilerAdapter
-
+        viewModel.kisilerListesi.observe(viewLifecycleOwner){
+            val kisilerAdapter = KisilerAdapter(requireContext(), it,viewModel)
+            binding.rv.adapter = kisilerAdapter
+        }
 
         binding.fab.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
