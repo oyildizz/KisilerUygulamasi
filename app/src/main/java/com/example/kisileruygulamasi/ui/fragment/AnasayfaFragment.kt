@@ -36,12 +36,12 @@ class AnasayfaFragment : Fragment() {
         val kisilerListesi = ArrayList<Kisiler>()
         val k1 = Kisiler(1, "Baran", "777")
         val k2 = Kisiler(2, "Özge", "444")
-        val k3 = Kisiler(3, "Deniz", "888")
+        val k3 = Kisiler(3, "Ozan", "888")
         kisilerListesi.add(k1)
         kisilerListesi.add(k2)
         kisilerListesi.add(k3)
 
-        val kisilerAdapter = KisilerAdapter(requireContext(), kisilerListesi)
+        val kisilerAdapter = KisilerAdapter(requireContext(), kisilerListesi,viewModel)
         binding.rv.adapter = kisilerAdapter
 
 

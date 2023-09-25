@@ -10,9 +10,10 @@ import com.example.kisileruygulamasi.data.entitiy.Kisiler
 import com.example.kisileruygulamasi.databinding.CardTasarimBinding
 import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.ui.fragment.AnasayfaFragmentDirections
+import com.example.kisileruygulamasi.viewmodel.AnasayfaViewModel
 import com.google.android.material.snackbar.Snackbar
 
-class KisilerAdapter(var mContext: Context, var kisilerListesi: List<Kisiler>) :
+class KisilerAdapter(var mContext: Context, var kisilerListesi: List<Kisiler>, var viewModel:AnasayfaViewModel) :
     RecyclerView.Adapter<KisilerAdapter.CardTasarimHolder>() {
     inner class CardTasarimHolder(var tasarim: CardTasarimBinding) :
         RecyclerView.ViewHolder(tasarim.root)
@@ -48,7 +49,7 @@ class KisilerAdapter(var mContext: Context, var kisilerListesi: List<Kisiler>) :
     }
 
     fun sil(kisi_id: Int) {
-        Log.e("Kişi Sil", kisi_id.toString())
+        viewModel.sil(kisi_id)
     }
 
 }
