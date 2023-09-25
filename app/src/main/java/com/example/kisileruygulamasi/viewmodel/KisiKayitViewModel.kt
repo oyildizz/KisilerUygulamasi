@@ -1,6 +1,5 @@
 package com.example.kisileruygulamasi.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.kisileruygulamasi.data.repo.KisilerRepository
 import kotlinx.coroutines.CoroutineScope

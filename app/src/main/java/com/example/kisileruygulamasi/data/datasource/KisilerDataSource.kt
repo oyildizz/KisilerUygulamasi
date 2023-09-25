@@ -1,7 +1,7 @@
 package com.example.kisileruygulamasi.data.datasource
 
 import android.util.Log
-import com.example.kisileruygulamasi.data.entitiy.Kisiler
+import com.example.kisileruygulamasi.data.entity.Kisiler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -31,4 +31,12 @@ class KisilerDataSource {
 
         return@withContext liste
     }
+
+    suspend fun ara(aramaKelimesi:String): List<Kisiler> = withContext(Dispatchers.IO){
+        val liste = ArrayList<Kisiler>()
+        val k1 = Kisiler(1, "Baran", "777")
+        liste.add(k1)
+        return@withContext liste
+    }
+
 }

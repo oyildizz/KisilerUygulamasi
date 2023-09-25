@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_kisi_detay" >
         <argument
             android:name="kisi"
-            app:argType="com.example.kisileruygulamasi.data.entitiy.Kisiler" />
+            app:argType="com.example.kisileruygulamasi.data.entity.Kisiler" />
     </fragment>
     <fragment
         android:id="@+id/kisiKayitFragment"
