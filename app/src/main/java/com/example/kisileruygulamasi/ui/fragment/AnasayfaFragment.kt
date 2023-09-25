@@ -75,5 +75,6 @@ override fun onCreate(savedInstanceState: Bundle?){
     override fun onResume() {
         super.onResume()
         Log.e("Kişi Anasafya", "Dönüldü")
+        viewModel.kisileriYukle()
     }
 }
